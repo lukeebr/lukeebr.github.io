@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .quick-message-button {
-            display: block;
-            margin: 5px 0;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 5px 15px;
+            background-color: #e5e5e5;
+            color: #333;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -19,6 +19,33 @@
 
         .quick-message-button:hover {
             background-color: #0056b3;
+        }
+
+        #quick-messages {
+            display: flex; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+            max-width: 100%;
+            padding: 10px 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 4px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555
         }
 
         #online-status {
@@ -49,7 +76,7 @@
 
         #chatbot-container {
             position: fixed;
-            bottom: 20px;
+            bottom: 60px;
             right: 20px;
             width: 350px;
             padding: 20px;
@@ -98,13 +125,13 @@
         #user-input {
             flex: 1;
             padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #f0f0f0;
+            border: 1px solid #ccc; /* Add a grey border */
+            background-color: #fff; /* Set the background color to white */
             font-size: 18px;
             margin-top: 10px;
             color: #333;
             font-family: 'Poppins', sans-serif;
+            border-radius: 5px; /* Add border radius for a slightly rounded appearance */
         }
 
         #chatbot-icon {
@@ -263,7 +290,7 @@
                 <i class="fa-solid fa-envelope"></i>
             </button>
         </div>
-        <div id="quick-messages" style="display: none;">
+        <div id="quick-messages" class="customized-scrollbar">
         </div>
         <div id="powered-by">
             Levert av <a href="https://www.alvahjelp.no" target="_blank">AlvaHjelp</a>
@@ -393,8 +420,6 @@
                 };
                 quickMessagesContainer.appendChild(button);
             });
-
-            quickMessagesContainer.style.display = 'block';
         }
 
         function startChat() {
