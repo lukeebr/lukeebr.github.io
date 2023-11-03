@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         :root {
-            --buttonColor: #2DCB6E
+            --buttonColor: #fd6262
         }
 
         .quick-message-button {
@@ -286,9 +286,10 @@
             margin-right: 20px;
         }
 
-        #exit-button {
+        .action-button {
             font-size: 28px;
             color: var(--buttonColor);
+            cursor: pointer;
         }
 
         #colored-bar {
@@ -310,10 +311,10 @@
                 <div style="display: flex; flex-direction: row; align-items: center;">
                     <p id="bot-name"></p>
                     <div id="actions">
-                        <div id="exit-button" onclick="clearChat()">
+                        <div class="action-button" onclick="clearChat()">
                             <i class="fa-solid fa-xmark"></i>
                         </div> 
-                        <div id="exit-button" onclick="closeWindow()">
+                        <div class="action-button" onclick="closeWindow()">
                             <i class="fa-solid fa-arrow-down"></i>
                         </div> 
                     </div> 
